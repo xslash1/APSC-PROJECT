@@ -2,7 +2,6 @@
 #include "interrupts.h"
 
 
-
 // void interrupt high_isr(void);
 
 static unsigned char lvd_flag=0; 

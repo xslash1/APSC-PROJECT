@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <xc.h>
-#include "..\Common\sumovore.h"
-#include "..\Common\motor_control.h"
-#include "..\Common\interrupts.h"
+#include "..\Robot\sumovore.h"
+#include "..\Robot\motor_control.h"
+#include "..\Robot\interrupts.h"
 #include <p18f4525.h>
 
 // main acts as a cyclical task sequencer
