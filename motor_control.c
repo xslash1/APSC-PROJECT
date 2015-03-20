@@ -36,12 +36,13 @@ void motor_control(void)
 
 void follow_simple_curves(void)
 {
+	if (SeeLine.b.Left && SeeLine.b.CntLeft) largeLeftTurn;
      if ( SeeLine.b.Center ) straight_fwd();
      else if (SeeLine.b.Left) spin_left();
      else if (SeeLine.b.CntLeft) turn_left();
      else if (SeeLine.b.CntRight) turn_right();
     else if (SeeLine.b.Right) spin_right();
-	else if (SeeLine.b.Left && SeeLine.b.CntLeft) largeLeftTurn;
+	
 }
 
 void largeLeftTurn(void)
