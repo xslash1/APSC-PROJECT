@@ -7,6 +7,8 @@ void turn_left(void);
 void straight_fwd(void);
 void turn_right(void);
 void spin_right(void);
+void largeLeftTurn(void):
+
 
 void motor_control(void)
 {
@@ -35,6 +37,13 @@ void follow_simple_curves(void)
      else if (SeeLine.b.CntLeft) turn_left();
      else if (SeeLine.b.CntRight) turn_right();
     else if (SeeLine.b.Right) spin_right();
+	else if (SeeLine.b.Left && SeeLine.b.CntLeft) largeLeftTurn;
+}
+
+void largeLeftTurn(void)
+{
+  set_motor_speed(left, rev_fast, 0); 
+  set_motor_speed(right, fast, 0); 
 }
 
 void spin_left(void)
