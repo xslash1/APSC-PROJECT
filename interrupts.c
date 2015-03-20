@@ -1,6 +1,6 @@
 #include <xc.h>
 #include "interrupts.h"
-//troll
+
 
 // void interrupt high_isr(void);
 
