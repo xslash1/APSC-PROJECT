@@ -15,7 +15,11 @@ void motor_control(void)
      // very simple motor control
      switch(SeeLine.B)
      {
-        case 0b00100u:
+        case 0b10100u:
+	case 0b00101u: 
+		       straight_fwd();
+
+	case 0b00100u:
         case 0b00010u:
         case 0b01000u:
         case 0b00001u:
@@ -23,12 +27,11 @@ void motor_control(void)
                        //no breaks all above readings end up here
                        follow_simple_curves();
                        break;
-	case 0b10100u:
-	case 0b00101u: 
-		       straight_fwd();
+	
 			break;
         case 0b00000u:
                         motors_brake_all();
+			break;
 	case 0b11100u:
 			largeLeftTurn();
                        break;
@@ -38,7 +41,6 @@ void motor_control(void)
 
 void follow_simple_curves(void)
 {
-	if (SeeLine.b.Left && SeeLine.b.CntLeft) largeLeftTurn;
      if ( SeeLine.b.Center ) straight_fwd();
      else if (SeeLine.b.Left) spin_left();
      else if (SeeLine.b.CntLeft) turn_left();
