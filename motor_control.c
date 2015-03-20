@@ -29,6 +29,8 @@ void motor_control(void)
 			break;
         case 0b00000u:
                         motors_brake_all();
+	case 0b11100u:
+			largeLeftTurn();
                        break;
         default:       break;
       } 
