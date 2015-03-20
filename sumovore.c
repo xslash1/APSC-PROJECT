@@ -41,8 +41,8 @@
 #include <pwm.h>
 #include <timers.h>
 #include <reset.h>
-#include "..\Common\osc.h"
-#include "..\Common\sumovore.h"
+#include "..\Functions\osc.h"
+#include "..\Robot\sumovore.h"
 
 
 void openPORTCforPWM(void);
