@@ -23,6 +23,10 @@ void motor_control(void)
                        //no breaks all above readings end up here
                        follow_simple_curves();
                        break;
+	case 0b10100u:
+	case 0b00101u: 
+		       straight_fwd();
+			break;
         case 0b00000u:
                         motors_brake_all();
                        break;
