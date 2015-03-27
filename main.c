@@ -3,11 +3,13 @@
 #include "..\Robot\sumovore.h"
 #include "..\Robot\motor_control.h"
 #include "..\Robot\interrupts.h"
+#include "..\Robot\osc.h"
 #include <p18f4525.h>
 
 // main acts as a cyclical task sequencer
 void main(void)
 {
+   set_osc_32MHz();       // select 32 MHz oscillator speed
    
     initialization(); // function from sumovore.c
                       // it sets up pwm (using timer2),
@@ -19,7 +21,9 @@ void main(void)
 
 	threshold = 450u; // to change from default value
                      // uncomment and change to any unsigned int <1024u -- most usually <512u
-
+	
+	OpenTimer0(TIMER_INT_OFF & T0_SOURCE_INT & T0_16BIT & T0_PS_1_1);
+	
     while(1)
     {
         check_sensors();    // from sumovore.c
