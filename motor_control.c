@@ -12,6 +12,7 @@ void largeLeftTurn(void):
 
 void motor_control(void)
 {
+
      // very simple motor control
      switch(SeeLine.B)
      {
@@ -27,9 +28,8 @@ void motor_control(void)
                        //no breaks all above readings end up here
                        follow_simple_curves();
                        break;
-	
-			break;
         case 0b00000u:
+						
                         motors_brake_all();
 			break;
 	case 0b11100u:
