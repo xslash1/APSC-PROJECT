@@ -7,7 +7,7 @@ void turn_left(void);
 void straight_fwd(void);
 void turn_right(void);
 void spin_right(void);
-void largeLeftTurn(void):
+void largeLeftTurn(void);
 
 
 void motor_control(void)
@@ -28,7 +28,7 @@ void motor_control(void)
                        follow_simple_curves();
                        break;
 	
-			break;
+		
         case 0b00000u:
                         motors_brake_all();
 			break;
