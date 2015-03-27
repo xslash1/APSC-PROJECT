@@ -16,10 +16,10 @@ void motor_control(void)
      switch(SeeLine.B)
      {
         case 0b10100u:
-	case 0b00101u: 
+		case 0b00101u: 
 		       straight_fwd();
 
-	case 0b00100u:
+		case 0b00100u:
         case 0b00010u:
         case 0b01000u:
         case 0b00001u:
